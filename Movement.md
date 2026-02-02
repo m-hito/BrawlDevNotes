@@ -1,5 +1,8 @@
-this movement small system i made was just pratice for OOPS to be honest, im kinda obsessed with system/ structure thinking rather than "working scripts", i could use ai path finding service to make movement system
-but i made a movement custom module for each npc handling.
+this movement small system i made was just pratice for OOPS to be honest, im prefer with system/ structure thinking rather than "working scripts", i could use ai path finding service to make movement system
+but i made a movement custom module for each npc handling. You can tweak data with ai to your preference i just made the blueprint You can extend it using ai/ ur own logic
+suggestion: # add weapon to each npc,
+# add patrol points 
+# add custom type of movement (noob.lua) 
 
 movement.lua (modulescript)
 this is core movement script which decide the behaviour of each npc/ construct here. Auto cleans up npc on dying, when making this movement module i jus wanted to make the npc move so i made move() function
