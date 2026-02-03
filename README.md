@@ -12,6 +12,7 @@
 | :-- | :-- | :-- |
 | **[notesV2.md](notesV2.md)** ⭐ | **Clean \& Formatted** | Polished notes, easy reading |
 | **[rawBrawlDevNotes](rawBrawlDevNotes)** | **Chaotic but Gold** | Raw analysis + my deep dives |
+| **[GuiBrawlDev](BrawldevGuiNotes.md)** | **Clean Gui notes diamond** | everything u need to know about gui 900 lines notes |
 
 
 ***
