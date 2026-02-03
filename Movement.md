@@ -4,15 +4,13 @@
 > AI pathfinding exists but custom = more control. Tweakable blueprint.
 
 ## 🎯 **Core Philosophy**
-Working scripts < Structured systems
+Working scripts < Structured systems  
 
 Blueprint exists → extend with AI/your logic
 
 Scalable folder structure
 
 State handling foundation
-
-text
 
 ## 📁 **File Structure & Purpose**
 
@@ -29,34 +27,37 @@ NPC = {
     move(),           -- Physics/behavior  
     FindNearestPlayer() -- AI detection
 }
+```
+
 Auto-cleans NPC on death. Essential for AI → player interaction.
 
-🧠 Noob.lua - Scalability Demo
-text
-Inheritance: movement.lua → Noob.lua
+## 🧠 Noob.lua - Scalability Demo
+
+**Inheritance**: movement.lua → Noob.lua
 - Folder organization win
 - Custom movement types ready
 - "Scalability" flex (devs love this)
-🚀 movementSetup.lua - Production Ready
-text
+
+## 🚀 movementSetup.lua - Production Ready
+
 RunService + deltaTime = smooth
 Delta lag compensation
 Plug-and-play NPC factory
 💡 Extensions (AI/You Handle)
-text
+
 ✅ Add weapons to NPCs  
 ✅ Patrol points system
 ✅ Custom movement types (Noob.lua → Pro.lua → Boss.lua)
 ✅ State machine expansion
 🎮 Why This Exists
-text
+
 "I made it without help so I left it raw"
 - Working prototype 
 - OOP foundation solid
 - Extendable by design
 - Abandoning at "good enough"
 Status: Movement exists → AI detection works → Scalable structure
-Next dev: Weapons + patrol points via ChatGPT tweaks.
+## Next dev: Weapons + patrol points via ChatGPT tweaks.
 
 "Devs love scalability" → Delivered.
 
