@@ -1,4 +1,4 @@
-# GUI Master Notes - Organized by System
+# GUI Master Notes - Organized by m_hito link: https://www.youtube.com/playlist?list=PLQ1Qd31Hmi3Xnlu8u9hCYClLurMQYJIrz
 
 **Purpose**: Reference guide to match GUI components with game systems (Shop, Combat, Inventory, etc.)
 
