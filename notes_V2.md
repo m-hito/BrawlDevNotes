@@ -259,4 +259,91 @@ Next: OOP ModuleScripts → Production architecture
 
 "OOP organizes 1 object. Tags manage 1000."
 
+## 🧠 **11: OOP Mastery (ModuleScripts) - CODE REUSE**
 
+**Definition:** **Related data + behavior** inside **one object**  
+**Most important topic** for **time-saving + scalability**
+
+### **Core Concepts:**
+| **Concept** | **Meaning** | **Example** |
+|-------------|-------------|-------------|
+| **Class** | **Blueprint** | House blueprint |
+| **Properties** | **Data/State** | Color, size, rooms |
+| **Methods** | **Behaviors** | Open door, paint |
+| **Instance** | **Real object** | Built house |
+| **Instantiation** | **Build process** | Blueprint → house |
+
+**House Analogy:**
+Class = Blueprint (properties + methods)
+Object = Built house (unique instance)
+Instantiation = Construction process
+
+text
+
+**Luau Reality:** **No classes** → Use **tables + metatables**
+
+### **Colon Syntax (Syntactic Sugar):**
+```lua
+local module = {name = "Hgsis"}
+
+function module.Method(self)      -- self = module table
+    print(self.name)
+end
+
+module:Method()  -- Auto-passes module as "self"
+-- Same as: module.Method(module)
+```
+Status: OOP foundation → ModuleScript architecture ready
+
+## ⌨️ 13: UserInputService (Client-Side Input)
+**Client-only. ** Fires remote events to server. Detects all devices.
+
+Quick Reference:
+Method	Use Case	Returns
+InputBegan	Key press down	Input object
+InputEnded	Key release	Input object
+IsKeyDown()	Key held	Boolean
+JumpRequest	Jump button	None
+TouchEnabled	Mobile check	Boolean
+Core Pattern (1 Code = All Methods):
+```lua
+UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    if gameProcessedEvent then return end -- **Skip Roblox GUI**
+    
+    -- **Keyboard:** input.KeyCode == Enum.KeyCode.R
+    -- **Mouse:** input.UserInputType == Enum.UserInputType.MouseButton1
+    -- **Combo:** UserInputService:IsKeyDown(Enum.KeyCode.Q) and input.KeyCode == Enum.KeyCode.R
+    
+    if input.KeyCode == Enum.KeyCode.R then
+        print("R pressed!")
+    end
+end)
+```
+Device Detection:
+
+```lua
+if UserInputService.TouchEnabled then
+    print("**Mobile** - Adjust GUI")
+elseif UserInputService.GamepadEnabled then
+    print("**Console** - Gamepad controls")
+end
+```
+Pro Tips:
+
+gameProcessedEvent = Skip Roblox UI clicks
+
+tick() variable = Double-tap detection
+
+JumpRequest = Universal jump (all devices)
+
+**Implementation:***
+Device-specific GUI scaling
+Different tool behavior per device
+Double-press combos (tick() timing)
+
+Status: Input → OOP → Production combat input systems
+Next: DataStores → Persistent player data
+
+"OOP = Code reuse. InputService = Universal controls."
+
+text
