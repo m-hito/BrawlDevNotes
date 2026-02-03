@@ -1,9 +1,9 @@
-# 🚀 BrawlDev Notes (Episodes 1-3) - Core Roblox Systems
+# 🚀 BrawlDev Notes (Roblox advanced scripting 1 - 36) - Core Roblox Systems (playlist) https://www.youtube.com/playlist?list=PLQ1Qd31Hmi3WKkVHnadvhOOjz04AuMYAf
 
 > **"Server validates. Client suggests. Systems scale."**
 > Raw dev notes → Production knowledge base
 
-## 🎯 **01: Client vs Server Fundamentals**
+## 🎯 **01: Client vs Server Fundamentals** https://youtu.be/dRgvhjr2Dx0?si=kJFJALltUqxEomwY
 
 | **Aspect** | **LocalScript (Client)** | **ServerScript (Server)** |
 |------------|--------------------------|---------------------------|
@@ -32,8 +32,6 @@ Server: "Nah, only +10 earned" ✅
 StarterPack → Player.Backpack → Character (equipped)
 ↑ ↓
 Tool dropped → Workspace ← Tool picked up
-
-text
 
 **Tool Flow:** `Equipped` → `Activated` → `Unequipped`
 
@@ -71,7 +69,7 @@ end
 
 System Built: Poison system in charging tool
 
-📡 05: RemoteEvents (One-Way Communication)
+## 📡** 05: RemoteEvents (One-Way Communication) **
 text
 ReplicatedStorage.Remotes.DropExp
     ↓ Client fires
@@ -88,7 +86,7 @@ S→C: Personal notifications
 
 S→All: Global announcements
 
-🔄 06: RemoteFunctions (Two-Way Communication)
+## 🔄 **06: RemoteFunctions (Two-Way Communication)** 
 Aspect	RemoteEvent	RemoteFunction
 Client→Server	:FireServer(args)	:InvokeServer(args)
 Server Receive	:OnServerEvent	:OnServerInvoke
@@ -118,8 +116,6 @@ Next: Vector3 → Positioning → Knockback systems
 **Definition:** Stores **X, Y, Z** coordinates for position/size in 3D space
 X = Left/Right Y = Up/Down Z = Forward/Backward
 
-text
-
 | **Property** | **Purpose** | **Example** |
 |--------------|-------------|-------------|
 | `Part.Position` | World location | `Vector3.new(10, 5, 20)` |
@@ -129,8 +125,6 @@ text
 **Vector3 vs CFrame:**
 Vector3 = Position only (WHERE?)
 CFrame = Position + Rotation (WHERE? + FACING?)
-
-text
 
 **Use Cases:**
 - ✅ **Movement:** Projectiles, enemies, player walking
@@ -145,14 +139,10 @@ text
 Normal: while true do end → Blocks everything below
 Coroutines: Multiple while loops → Run simultaneously
 
-text
-
 **Analogy:**
 Script = Reading 1 book page-by-page
 
 Coroutines = Reading 2+ books (page 1 → book 1, page 1 → book 2)
-
-text
 
 ### **Core Functions:**
 ```lua
@@ -197,8 +187,6 @@ Next: CollectionService → Dynamic object management
 OOP = "How to build 1 sword" 🧠
 CollectionService = "Find/manage 100 swords" 🔍
 
-text
-
 ### **Core Components:**
 | **Type** | **Purpose** | **Example** |
 |----------|-------------|-------------|
@@ -240,19 +228,18 @@ Boss = Enemy + Weapon
 CS:GetInstanceAddedSignal("Enemy"):Connect(HandleEnemy)
 CS:GetInstanceAddedSignal("Weapon"):Connect(HandleWeapon)
 ```
-2. Registry Pattern (LIVE List)
-text
+## 2. Registry Pattern (LIVE List)
+
 ❌ Manual: table.insert(weapons, sword) -- Breaks on destroy
 ✅ Auto: CS:GetInstanceAddedSignal("Weapons") -- Always current
 Spawn weapon → Auto-registered → Auto-handled → Auto-cleaned
 
-3. Observer Pattern
-text
+## 3. Observer Pattern
+
 CS:GetInstanceAddedSignal("Boss")     -- Subject notifies
 Your handler                    -- Observer reacts
 Mental Model:
 
-text
 OOP builds sword → Tags identify role → CollectionService routes logic
 Status: Tags + signals = Scalable object systems
 Next: OOP ModuleScripts → Production architecture
@@ -386,13 +373,10 @@ Key Insight: Always wrap DataStore calls in pcall (handles Roblox outages)
 ✅ Animation Track: Full control (play/stop/speed/events)
 Always use: humanoid:LoadAnimation(animation) → Track
 
-text
-
 ### **Priority Hierarchy (Low → High):**
 Core → Movement → Idle → Action → MovementActions → Weapon
 Best Practice: Set custom animations to "Action" priority
 
-text
 
 ### **Core Pattern:**
 ```lua
@@ -400,17 +384,16 @@ local anim = Instance.new("Animation")
 anim.AnimationId = "rbxassetid://ID"
 local track = humanoid:LoadAnimation(anim)
 track:Play()  -- Speed, Looped, Weight controllable
-Critical Properties:
-Property	Purpose	Default
-Health	Current HP	100
-MaxHealth	Max HP	100
-WalkSpeed	Movement speed	16
-JumpPower	Jump height	50
-Sit	Sitting state	false
 ```
+Critical Properties:
+| **Property** | **Purpose**| Default |
+|----------|-----------|--------------|
+| Health | Current HP |	100 |
+| MaxHealth	| Max HP | 100 |
+| WalkSpeed	| Movement speed | 16 |
+| JumpPower	| Jump height | 50 |
+| Sit |	Sitting state |	false |
 
-text
-undefined
 Key Methods:
 ```lua
 1. humanoid.StateChanged:Connect(function(old, new)
@@ -440,4 +423,3 @@ Next: Combat systems → Full player/enemy integration
 
 "DataStores save progress. Humanoids make characters alive."
 
-text
