@@ -1,13 +1,69 @@
-# BrawlDevNotes
-## Read notesV2.md for clean format notes.
 
-i made notes on brawlDev advance series on my own version
+# 🚀 **BrawlDevNotes** - Roblox Dev Notes by m_hito
 
-## read rawBrawlDevNotes for chaotic but informative version of brawl devNotes
-Remember i made this notes from brawldev advance scripting 1-36 playlist, some are missing i will add it later.
+> **Custom notes** from **BrawlDev Advance Scripting (Episodes 1-36)**
+> *Made for Roblox game devs -  Some episodes WIP → coming soon!*
 
-## Systems
-i make systems and add some raw analysis of that system by me for no reason/ jus other devloper to read if intrested
+***
 
-## Movement.md 
-System 1
+## 📖 **Quick Access**
+
+| Version | Format | What's Inside |
+| :-- | :-- | :-- |
+| **[notesV2.md](notesV2.md)** ⭐ | **Clean \& Formatted** | Polished notes, easy reading |
+| **[rawBrawlDevNotes](rawBrawlDevNotes)** | **Chaotic but Gold** | Raw analysis + my deep dives |
+
+
+***
+
+## 🛠️ **Systems Implemented**
+
+### **1. Movement System** 👟
+
+> **Movement.md** - Core locomotion foundation
+> - **Custom physics**
+> - **Smooth interpolation**
+> - **Server-authoritative**
+
+**[→ View Movement.md](Movement.md)**
+
+```
+┌─ Other systems coming...
+├─ Combat System
+├─ Inventory System  
+└─ UI Framework
+```
+
+
+***
+
+## ✍️ **About These Notes**
+
+**`m_hito`** wrote these from **BrawlDev's Advanced Scripting playlist** (1-36).
+**Why?** To help other devs + document my learning.
+
+```
+📚 Source: BrawlDev Advance Scripting (YouTube)
+🔧 Goal: Production-ready Roblox systems
+🎯 Status: MVP → Polish → Scale
+```
+
+
+***
+
+## 🚀 **Get Started**
+
+```bash
+1. Clone repo
+2. Open notesV2.md (clean version)
+3. Check Movement.md (first system)
+4. Build your game! 🔥
+```
+
+
+***
+
+**⭐ Star if helpful** | **🐛 Issues welcome** | **💬 Discussions open**
+**Made with ❤️ for Roblox devs** by **m_hito**
+
+***
