@@ -346,4 +346,98 @@ Next: DataStores → Persistent player data
 
 "OOP = Code reuse. InputService = Universal controls."
 
+## 💾 **17: DataStoreService (Persistent Data)**
+
+**Purpose:** **Save player progress** across sessions (coins, levels, etc.)
+
+### **Core Methods:**
+| **Method** | **Purpose** | **Example** |
+|------------|-------------|-------------|
+| `GetDataStore("PlayerData")` | **Access data bucket** | `local dataStore = DataStoreService:GetDataStore("PlayerData")` |
+| `SetAsync(key, value)` | **Save data** | `dataStore:SetAsync(player.UserId .. "_Coins", 100)` |
+| `GetAsync(key)` | **Load data** | `local coins = dataStore:GetAsync(player.UserId .. "_Coins")` |
+| `IncrementAsync(key, amount)` | **Add to existing** | `dataStore:IncrementAsync("Coins", 5)` |
+| `RemoveAsync(key)` | **Delete data** | `dataStore:RemoveAsync("Coins")` |
+
+### **Safety Pattern (pcall):**
+```lua
+local success, result = pcall(function()
+    dataStore:SetAsync(player.UserId .. "_Coins", coins)
+end)
+
+if not success then
+    warn("**Data save failed!**")
+end
+```
+
+Key Insight: Always wrap DataStore calls in pcall (handles Roblox outages)
+
+## 🎬 20: Animations (Character Liveliness)
+### **Rig Types:**
+| **Type** | **Parts** | **Use Case** |
+|----------|-----------|--------------|
+| **R15** | **15 parts** | **Modern games, detailed hands** |
+| **R6** | **6 parts** | **Legacy games, simpler** |
+
+**⚠️ Critical:** **R15 ≠ R6 animations** (incompatible)
+
+### **Animation Instance vs Track:**
+❌ Animation Instance: Just AnimationId (no control)
+✅ Animation Track: Full control (play/stop/speed/events)
+Always use: humanoid:LoadAnimation(animation) → Track
+
+text
+
+### **Priority Hierarchy (Low → High):**
+Core → Movement → Idle → Action → MovementActions → Weapon
+Best Practice: Set custom animations to "Action" priority
+
+text
+
+### **Core Pattern:**
+```lua
+local anim = Instance.new("Animation")
+anim.AnimationId = "rbxassetid://ID"
+local track = humanoid:LoadAnimation(anim)
+track:Play()  -- Speed, Looped, Weight controllable
+Critical Properties:
+Property	Purpose	Default
+Health	Current HP	100
+MaxHealth	Max HP	100
+WalkSpeed	Movement speed	16
+JumpPower	Jump height	50
+Sit	Sitting state	false
+```
+
+text
+undefined
+Key Methods:
+```lua
+1. humanoid.StateChanged:Connect(function(old, new)
+    if new == Enum.HumanoidStateType.Jumping then
+        print("**Jumping!**")
+    end
+end)
+
+2. humanoid:ChangeState(Enum.HumanoidStateType.Freefall) -- Force state
+3. humanoid:GetState() -- Current state
+4. humanoid.HealthChanged:Connect(function(health) end)
+5. humanoid:MoveTo(Vector3.new(10, 5, 20)) -- Smooth move
+6. humanoid.Died:Connect(function() end) -- Cleanup
+7. humanoid:TakeDamage(25) -- Deal damage
+```
+
+### Double Jump Pattern:
+```lua
+humanoid.StateChanged:Connect(function(_, newState)
+    if newState == Enum.HumanoidStateType.Freefall then
+        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    end
+end)
+```
+Status: Data + Animations + Humanoids = Complete character systems
+Next: Combat systems → Full player/enemy integration
+
+"DataStores save progress. Humanoids make characters alive."
+
 text
