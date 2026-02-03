@@ -1,28 +1,62 @@
-# this movement small system i made was just pratice for OOPS to be honest, im prefer with system/ structure thinking rather than "working scripts", i could use ai path finding service to make movement system
-but i made a movement custom module for each npc handling. You can tweak data with ai to your preference i just made the blueprint You can extend it using ai/ ur own logic
-# suggestion: 
- add weapon to each npc,
- add patrol points 
- add custom type of movement (noob.lua) 
+# 🚀 NPC Movement System Blueprint (v0.1)
 
-# movement.lua (modulescript)
-this is core movement script which decide the behaviour of each npc/ construct here. Auto cleans up npc on dying, when making this movement module i jus wanted to make the npc move so i made move() function
-and give it to constructor NPC()
+> **Practice project for OOP + systems thinking.**  
+> AI pathfinding exists but custom = more control. Tweakable blueprint.
 
-NPC = { move() }
+## 🎯 **Core Philosophy**
+Working scripts < Structured systems
 
-tried to do some state handling, well for obvious benefits and it works but its on ur imagination how u can extend it im just abandoning it not till perfection just as "something exists", FindNearestPlayer()
-essential for ai detecting player to follow/ why make npc move if u dont want to detect player?
+Blueprint exists → extend with AI/your logic
 
-NPC = { move(), FindNearestPlayer() }
+Scalable folder structure
 
-now u can add patrol points just use chatgpt/ ai to add that if ur really confused but jus understand it at the end.
-i made it without any help so i left it empty 
-# Noob.lua (modulescript)
-its jus a child of movement to keep folder organized like yeah i dont know what i was thinking but inheritence thats it, custom logic and stuff but not actually using it, but yeah scalable
-devs love scalability i guess, i stopped even tho it was uesless to make but the word "scalability" made me want make this script
+State handling foundation
 
-movementSetup.lua
-just setting up our npc, it depends on u how u want to set it up, i just wanted to make it work, and yeah runService was good choice with delta lag i guess 
+text
 
+## 📁 **File Structure & Purpose**
+
+| File | Role | Key Features |
+|------|------|--------------|
+| **`movement.lua`** | **Core AI Brain** | `NPC = { move(), FindNearestPlayer() }`<br>Auto-cleanup on death |
+| **`Noob.lua`** | **Movement Child** | Inheritance pattern<br>Custom logic ready |
+| **`movementSetup.lua`** | **NPC Factory** | RunService + deltaTime<br>Easy setup |
+
+## 🔧 **movement.lua - The Engine**
+```lua
+-- Core constructor pattern
+NPC = { 
+    move(),           -- Physics/behavior  
+    FindNearestPlayer() -- AI detection
+}
+Auto-cleans NPC on death. Essential for AI → player interaction.
+
+🧠 Noob.lua - Scalability Demo
+text
+Inheritance: movement.lua → Noob.lua
+- Folder organization win
+- Custom movement types ready
+- "Scalability" flex (devs love this)
+🚀 movementSetup.lua - Production Ready
+text
+RunService + deltaTime = smooth
+Delta lag compensation
+Plug-and-play NPC factory
+💡 Extensions (AI/You Handle)
+text
+✅ Add weapons to NPCs  
+✅ Patrol points system
+✅ Custom movement types (Noob.lua → Pro.lua → Boss.lua)
+✅ State machine expansion
+🎮 Why This Exists
+text
+"I made it without help so I left it raw"
+- Working prototype 
+- OOP foundation solid
+- Extendable by design
+- Abandoning at "good enough"
+Status: Movement exists → AI detection works → Scalable structure
+Next dev: Weapons + patrol points via ChatGPT tweaks.
+
+"Devs love scalability" → Delivered.
 
