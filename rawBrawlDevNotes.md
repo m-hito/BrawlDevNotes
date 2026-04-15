@@ -1,4 +1,5 @@
 --[[ 
+`````````````
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ==================== Server side vs local side=====================================================================================
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -21,6 +22,7 @@ Can Access				Player's local data							Everything in game
  
 Main topic: to change sensitive information like giving player coin/ progress detail fireevent from local side to server side
 this ensures server change data of coins to required unit otherwise on local side hacker can change it locally and cheat
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 =========================================== 02_Delete Instances ====================================================================
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -636,6 +638,7 @@ Weapon (highest priority - combat actions)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ============================================ #29_Humanoid states, properties, methods ==============================================
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 Conception: humanoids are character model which give functionality to a model/ player character in this case
 Q. what is a humanoid? what happens when it is removed?
 --> humanoid is a animation controller for a character it controls the animation and movement and allows a model 
@@ -678,3 +681,4 @@ Easy system: Double jump system -- humanoid.StateChanged --> humanoid:GetState()
 (this will get more complex when actually coding it but u get the basic idea)
 
 ]]
+
