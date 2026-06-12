@@ -1,0 +1,1 @@
+- Refrence: https://create.roblox.com/docs/en-us/reference/engine/classes/FloatCurve
